@@ -9,6 +9,7 @@ namespace Learning_IT.Models
 {
     public class Answer
     {
+        //COMENTARIU
         [Key]
         public int Id { get; set; }
         [Required]
