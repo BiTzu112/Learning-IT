@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Learning_IT.Models
 {
-    public class MyContext:DbContext
+    public class MyContext : IdentityDbContext
     {
 
         public MyContext(DbContextOptions<MyContext> options) : base(options)
@@ -16,9 +17,10 @@ namespace Learning_IT.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             // Tabela de legaturin dintre user si role. Many-To-Many
             #region
-                modelBuilder.Entity<UserRole>()
+            modelBuilder.Entity<UserRole>()
                     .HasKey(ur => new { ur.UserId, ur.RoleId });
 
                 modelBuilder.Entity<UserRole>()
