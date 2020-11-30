@@ -12,6 +12,7 @@ namespace Learning_IT.Models
     {
         [Key]
         public int Id { get; set; }
+        public string IdentityId { get; set; }
         [Required]
         [Column(TypeName = "nvarchar(32)")]
         public string FirstName { get; set; }

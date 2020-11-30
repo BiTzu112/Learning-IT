@@ -41,6 +41,7 @@ namespace Learning_IT
             {
                 options.Password.RequiredLength = 6;
                 options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
 
             }).AddEntityFrameworkStores<MyContext>()
                 .AddDefaultTokenProviders();
@@ -56,7 +57,7 @@ namespace Learning_IT
                     ValidateIssuer = true,
                     ValidateAudience = true,
                     RequireExpirationTime = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key")),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["AuthSettings:key"])),
                     ValidateIssuerSigningKey = true
                 };
             });
@@ -73,6 +74,7 @@ namespace Learning_IT
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
