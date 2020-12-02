@@ -16,5 +16,6 @@ namespace Learning_IT.Models
         public int RoleId { get; set; }
         public Role Role { get; set; }
 
+
     }
 }

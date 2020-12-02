@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201106225023_ArticleColumnPlus.cs" />
-    <Compile Remove="Migrations\20201106225023_ArticleColumnPlus.Designer.cs" />
-    <Compile Remove="Migrations\20201106225324_ArticleColumnPlus.cs" />
-    <Compile Remove="Migrations\20201106225324_ArticleColumnPlus.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Json.Net" Version="1.0.23" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
